@@ -19,7 +19,7 @@
   - 启动数据库
     ```shell
     su - omm
-    gs_ctl start -D /opt/software/openGauss/data -Z single_node -l logfile
+    gs_ctl start -D /home/omm/workspace/openGauss/data -Z single_node -l logfile
     ```
   - 将`./library.sql`,`./delete.sql`传入服务器某一文件夹下,例(opt/software/),SQL导入数据
     >其中`library.sql`内为所有的SQL语句,包括创建表,导入初始数据等,`delete.sql`为删除表操作,当然你可以新建数据库 `library`然后直接`drop database library`也可以,本文采用删除数据库中的表的形式,默认数据库名为(postgres),端口号5432<br>
@@ -27,11 +27,11 @@
     >**opengauss与mysql数据库写法不同,需要更改语句,不能直接使用**<br>  
 
     ```shell
-    gsql -d postgres -p 5432 -r -f /opt/software/library.sql > /opt/software/library.log
+    gsql -d postgres -p 5432 -r -f /home/omm/sql/library.sql > /home/omm/library.log
     ```
     删除数据
     ```shell
-    gsql -d postgres -p 5432 -r -f /opt/software/delete.sql > /opt/software/delete.log
+    gsql -d postgres -p 5432 -r -f /home/omm/sql/delete.sql > /home/omm/delete.log
     ```
     sql中已经添加了权限,**请更改`library.sql`的最后两行为你创建的用户的名字**
 - step2: run
