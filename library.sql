@@ -30,99 +30,6 @@ VALUES
 	( '并行程序设计导论', '东野圭吾 ', '北京十月文艺出版社', '9787111392842', '《并行程序设计导论/计算机科学丛书》编著者Peter S.Pacheco。本书全面涵盖了并行软件和硬件的方方面面，深入浅出地介绍如何使用MPI（分布式内存编程）、Pthreads和OpenMP（共享内存编程）编写高效的并行程序。各章节包含了难易程度不同的编程习题。本书可以用做计算机科学专业低年级本科生的专业课程的教材，也可以作为软件开发人员学习并行程序设计的专业参考书。', '中文', '39.50', '2017-06-01', 9, 1 ),
 	( '微分方程数值解法', '李荣华，刘波', '高等教育出版社', '9787040248630', '本书是编者在《微分方程数值解法》（第三版）的基础上修订而成的。本次修订的宗旨是加强方法及其应用，考虑到不同院校的需要，仍然保留常微分方程数值解法这一章。为了更方便教学，采取先介绍有限差分法，后介绍GMerkin有限元法，去掉原来的第七章，将离散方程的有关解法与椭圆方程的差分法和有限元法合并，同时增设了一些数值例子，适当删减部分理论内容，突出应用，降低难度。本书包括六章，章为常微分方程数值解法，第二章至第四章为椭圆、抛物和双曲偏微分方程的有限差分法，第五章、第六章为Galerkin有限元法。', '中文', '35.00', '2017-05-01', 9, 1 )
 
-CREATE TABLE class_info ( class_id INT NOT NULL PRIMARY KEY, class_name VARCHAR ( 60 ) NOT NULL );
-INSERT INTO class_info
-VALUES
-	( 1, '马克思主义' ),
-	( 2, '哲学' ),
-	( 3, '社会科学总论' ),
-	( 4, '政治法律' ),
-	( 5, '军事' ),
-	( 6, '经济' ),
-	( 7, '文化' ),
-	( 8, '语言' ),
-	( 9, '文学' ),
-	( 10, '艺术' ),
-	( 11, '历史地理' ),
-	( 12, '自然科学总论' ),
-	( 13, ' 数理科学和化学' ),
-	( 14, '天文学、地球科学' ),
-	( 15, '生物科学' ),
-	( 16, '医药、卫生' ),
-	( 17, '农业科学' ),
-	( 18, '工业技术' ),
-	( 19, '交通运输' ),
-	( 20, '航空、航天' ),
-	( 21, '环境科学' ),
-	( 22, '综合' );
-
-CREATE TABLE paper_info (
-	paper_id BIGSERIAL PRIMARY KEY,
-	name VARCHAR ( 200 ) NOT NULL,
-	author VARCHAR ( 50 ) NOT NULL,
-	publish VARCHAR ( 200 ) NOT NULL,
-	year VARCHAR ( 15 ) NOT NULL,
-	page VARCHAR ( 25) NOT NULL,
-	introduction text,
-	no VARCHAR ( 20 ),
-	vol VARCHAR ( 20 ),
-	doi VARCHAR (200)
-);
-
-
-select setval('paper_info_paper_id_seq',1,false);
-INSERT INTO paper_info (name,author,publish,year,page,introduction,no,vol,doi )
-VALUES 
-	('Deep Residual Learning for Image Recognition','Kaiming He','CVPR','2016','770-778','Deeper neural networks are more difficult to train. We
-present a residual learning framework to ease the training
-of networks that are substantially deeper than those used
-previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual
-networks are easier to optimize, and can gain accuracy from
-considerably increased depth. On the ImageNet dataset we
-evaluate residual nets with a depth of up to 152 layers—8
-deeper than VGG nets [40] but still having lower complexity. An ensemble of these residual nets achieves 3.57% error
-on the ImageNet test set. This result won the 1st place on the
-ILSVRC 2015 classification task. We also present analysis
-on CIFAR-10 with 100 and 1000 layers.
-The depth of representations is of central importance
-for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep
-residual nets are foundations of our submissions to ILSVRC
-& COCO 2015 competitions1
-, where we also won the 1st
-places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation.
-','8','11','https://github.com/learner-lu/library-system/releases/download/v0.0.1/He_Deep_Residual_Learning_CVPR_2016_paper-10w.pdf'),
-('BERT-Pre-training of Deep Bidirectional Transformers for Language Understanding',
-'Jacob Devlin','NAACL',
-'2018',
-'501-510',
-'We introduce a new language representation model called BERT, which stands for
-Bidirectional Encoder Representations from
-Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pretrain deep bidirectional representations from
-unlabeled text by jointly conditioning on both
-left and right context in all layers. As a result, the pre-trained BERT model can be finetuned with just one additional output layer
-to create state-of-the-art models for a wide
-range of tasks, such as question answering and
-language inference, without substantial taskspecific architecture modifications.
-BERT is conceptually simple and empirically
-powerful. It obtains new state-of-the-art results on eleven natural language processing
-tasks, including pushing the GLUE score to
-80.5% (7.7% point absolute improvement),
-MultiNLI accuracy to 86.7% (4.6% absolute
-improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1
-(5.1 point absolute improvement).','10','11',
-'https://github.com/learner-lu/library-system/releases/download/v0.0.1/BERT.pre-training.of.deep.bidirection.transformers.for.language.unsderstanding.pdf'),
-('Momentum Contrast for Unsupervised Visual Representation Learning','Kaiming He','CVPR','2020','650-659','We present Momentum Contrast (MoCo) for unsupervised visual representation learning. From a perspective on
-contrastive learning [29] as dictionary look-up, we build
-a dynamic dictionary with a queue and a moving-averaged
-encoder. This enables building a large and consistent dictionary on-the-fly that facilitates contrastive unsupervised
-learning. MoCo provides competitive results under the
-common linear protocol on ImageNet classification. More
-importantly, the representations learned by MoCo transfer
-well to downstream tasks. MoCo can outperform its supervised pre-training counterpart in 7 detection/segmentation
-tasks on PASCAL VOC, COCO, and other datasets, sometimes surpassing it by large margins. This suggests that
-the gap between unsupervised and supervised representation learning has been largely closed in many vision task',9,2,
-'https://github.com/learner-lu/library-system/releases/download/v0.0.1/He_Momentum_Contrast_for_Unsupervised_Visual_Representation_Learning_CVPR_2020_paper.pdf');
-
 CREATE TABLE lend_list (
 	ser_num BIGSERIAL PRIMARY KEY,
 	book_id BIGINT NOT NULL,
@@ -177,5 +84,5 @@ VALUES
 	('李一琛','学生', '123456' ),
 	('李二飞', '学生','123456' );
 
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO lzx;
-GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO lzx;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO gaussdb;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO gaussdb;
