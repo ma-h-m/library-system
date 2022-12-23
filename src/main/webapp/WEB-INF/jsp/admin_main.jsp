@@ -12,14 +12,14 @@
         })
     </script>
 </head>
-<body background="img/sky.jpg" style=" background-repeat:no-repeat ;
+<body background="img/library.jpg" style=" background-repeat:no-repeat ;
 background-size:100% 100%;
 background-attachment: fixed;">
 
 <div id="header"></div>
 
 <!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -39,8 +39,8 @@ background-attachment: fixed;">
             </div>
         </div>
     </div>
-</div>
-<c:if test="${!empty login}">
+</div> -->
+<!-- <c:if test="${!empty login}">
     <script>
         $(function () {
             $("#myModal").modal({
@@ -48,7 +48,7 @@ background-attachment: fixed;">
             })
         })
     </script>
-</c:if>
+</c:if> -->
 
 </body>
 </html>
