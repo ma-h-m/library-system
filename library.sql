@@ -5,9 +5,9 @@ VALUES
 	( 123456, '123456', 'admin' );
 CREATE TABLE book_info (
 	book_id BIGSERIAL PRIMARY KEY,
-	name VARCHAR ( 50 ) NOT NULL,
-	author VARCHAR ( 50 ) NOT NULL,
-	publish VARCHAR ( 50 ) NOT NULL,
+	name VARCHAR ( 100 ) NOT NULL,
+	author VARCHAR ( 100 ) NOT NULL,
+	publish VARCHAR ( 100 ) NOT NULL,
 	ISBN VARCHAR ( 15 ) NOT NULL,
 	introduction text,
 	language VARCHAR ( 20 ) NOT NULL,
